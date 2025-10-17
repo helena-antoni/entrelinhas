@@ -1,8 +1,10 @@
-export function App() {
+import Home from './pages/Home';
 
+function App() {
   return (
-   <h1 className="text-2xl">Projeto Entrelinhas!</h1>
-  )
+    <div className="min-h-screen bg-gray-100 font-sans">
+      <Home />
+    </div>
+  );
 }
-
-export default App
+export default App;

@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@layer base {
+  :root {
+    /* --font-indie: 'Indie Flower', cursive; */
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    
+  }
+}
+
+@layer utilities {
+  .font-indie {
+    font-family: 'Indie Flower', cursive !important;
+  }
+}

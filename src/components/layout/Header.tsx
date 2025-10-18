@@ -1,5 +1,3 @@
-// src/components/layout/Header.tsx
-
 import React, { useState } from 'react';
 import logo from '../../assets/logo.svg'; 
 import LinkButton from '../ui/LinkButton'; 
@@ -9,7 +7,7 @@ const Header: React.FC = () => {
 
   return (
   
-    <header className="bg-white py-[16px] shadow-md">
+    <header className="bg-[#F2F2F2] py-[16px]  shadow-sm">
 
       <div 
         className="
@@ -31,11 +29,11 @@ const Header: React.FC = () => {
         
 
       <nav className="hidden md:flex space-x-4">
-        <LinkButton href="#" variant="primary">
+        <LinkButton href="#" variant="secondary">
           About Us
         </LinkButton>
 
-        <LinkButton href="#" variant="primary">
+        <LinkButton href="#" variant="secondary">
           Contact Us
         </LinkButton>
       </nav>

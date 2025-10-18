@@ -4,7 +4,9 @@
   :root {
     /* --font-indie: 'Indie Flower', cursive; */
     --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    
+
+    --color-warm-ochre: #CC7000;
+    --color-ochre-dark-text: #663800;
   }
 }
 

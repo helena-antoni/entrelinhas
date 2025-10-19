@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import WelcomeSection from '../ui/WelcomeSection'; 
 import CategorySelector from '../ui/CategorySelector';
 import QuoteCards from '../QuoteCards';
-
-import { Quote } from '../../types';
+ 
 import { categories } from '../data/categories';
+import { Quote } from '../types';
 
 const initialQuote: Quote = {
-    text: "Clique em uma categoria ou em 'Surpreenda-me' para gerar uma nova frase inspiradora!",
-    author: "Entrelinhas AI",
+  text: "Clique em uma categoria ou em 'Surpreenda-me' para gerar uma nova frase inspiradora!",
+  author: "Entrelinhas AI",
+  categorySlug: ''
 };
 
 const Main: React.FC = () => {
@@ -32,6 +33,7 @@ const Main: React.FC = () => {
             setCurrentQuote({
                 text: `Nova frase gerada para ${slug.toUpperCase()}. Status: PRONTO!`,
                 author: "Gemini Simulado",
+                categorySlug: slug
             });
             setIsLoading(false);
         }, 1500); 

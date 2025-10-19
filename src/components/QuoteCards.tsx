@@ -1,8 +1,7 @@
 import React from 'react';
-import LinkButton from './ui/LinkButton';
-import { Quote } from '../types'; 
-import CategoryButton from './CategoryButton';
+import LinkButton from './ui/LinkButton'; 
 import ActionButton from './ui/ActionButton';
+import { Quote } from './types';
 
 interface QuoteCardsProps {
     quote: Quote; 
@@ -10,12 +9,7 @@ interface QuoteCardsProps {
     onCopyClick: () => void; 
     isLoading: boolean; 
 }
-export interface Quote {
-    text: string;
-    author: string;
-    categorySlug: string; 
-}
-
+ 
 const LoadingSpinner = () => (
     <div className="flex flex-col items-center justify-center w-full min-h-[150px] text-[#CC7000]">
         <span className="material-symbols-rounded text-4xl animate-spin">autorenew</span>
@@ -55,13 +49,13 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick, onCop
                     ">
                     "{quote.text}"
     
-                    <p className="
+                    <span className="
                         w-full text-right 
                         text-sm font-inter-semibold 
                         text-[#524F54] italic 
                     ">
                     — {quote.author}
-                    </p>
+                    </span>
                 </p>
             </div>)}
 

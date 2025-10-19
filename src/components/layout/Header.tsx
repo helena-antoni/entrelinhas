@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import logo from '../../assets/logo.svg'; 
+import React, { useState } from 'react'; 
 import LinkButton from '../ui/LinkButton'; 
+import Image from 'next/image';
+
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,9 +21,11 @@ const Header: React.FC = () => {
         
        
       <a href="/">
-        <img 
-          src={logo} 
+        <Image   ///PESQUISARRR
+          src={'logo.svg'} 
           alt="Logo Entrelinhas" 
+          width={100}
+          height={50}
           className="h-8 md:h-9 w-auto" 
         />
       </a>

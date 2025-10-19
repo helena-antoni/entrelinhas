@@ -8,7 +8,7 @@ interface QuoteCardsProps {
     quote: Quote; 
     onSurpriseMeClick: () => void;
     onCopyClick: () => void; 
-    isLoading: boolean; // NOVO: Propriedade para controlar o estado
+    isLoading: boolean; 
 }
 export interface Quote {
     text: string;
@@ -16,7 +16,6 @@ export interface Quote {
     categorySlug: string; 
 }
 
-// Componente de carregamento (Spinner)
 const LoadingSpinner = () => (
     <div className="flex flex-col items-center justify-center w-full min-h-[150px] text-[#CC7000]">
         <span className="material-symbols-rounded text-4xl animate-spin">autorenew</span>
@@ -46,7 +45,7 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick, onCop
             ) : (
             
             <div className="w-full bg-[#F2F2F2] ">
-                {/* Frase */}
+            
                 <p className="
                     text-lg md:text-xl font-normal 
                     font-indie-flower     
@@ -56,7 +55,6 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick, onCop
                     ">
                     "{quote.text}"
     
-                     {/* autor */}
                     <p className="
                         w-full text-right 
                         text-sm font-inter-semibold 
@@ -68,7 +66,7 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick, onCop
             </div>)}
 
 
-            {/* botão copiar e surpreenda-me) */}
+            {/* copiar e surpreenda-me */}
             <div className={`
                 w-full 
                 flex justify-end items-center 
@@ -77,21 +75,21 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick, onCop
             ${isLoading ? 'opacity-50 pointer-events-none' : ''} 
             `}>
                 
-                {/* BOTÃO COPIAR (Agora é um ActionButton Secundário) */}
+                {/*copiar */}
                 <ActionButton 
                     name="Copiar"
                     icon="content_copy"
                     onClick={onCopyClick}
-                    isPrimary={false} // Estilo secundário (cinza)
+                    isPrimary={false} // cinza
                     disabled={isLoading}
                 />
 
-                {/* BOTÃO SURPREENDA-ME (Agora é um ActionButton Primário) */}
+                {/* surpreenda-me*/}
                 <ActionButton 
                     name="Surpreenda-me"           
                     icon="casino"                  
                     onClick={onSurpriseMeClick}    
-                    isPrimary={true} // Estilo primário (ocre)
+                    isPrimary={true}  
                     disabled={isLoading}
                 />
                 

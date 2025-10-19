@@ -2,7 +2,7 @@ import React from 'react';
 
 const WelcomeSection: React.FC = () => {
   return (
-    <section className="pt-24 pb-[92px] mx-auto text-left  
+    <section className="pt-24 pb-[92px]  text-left  max-w-5xl
     ">
       
       <h1 className="text-[#211D23] font-indie items-left font-normal

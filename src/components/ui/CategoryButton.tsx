@@ -7,6 +7,7 @@ interface CategoryButtonProps {
     icon: string;
     isActive: boolean; 
     onClick: () => void;
+    isStandalone?: boolean;
 }
 
 const CategoryButton: React.FC<CategoryButtonProps> = ({ name, icon, isActive, onClick }) => {

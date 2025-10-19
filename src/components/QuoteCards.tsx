@@ -1,18 +1,30 @@
 import React from 'react';
 import LinkButton from './ui/LinkButton';
+import { Quote } from '../types'; 
+import CategoryButton from './CategoryButton';
+import ActionButton from './ui/ActionButton';
 
-interface QuoteCardProps {
+interface QuoteCardsProps {
     quote: Quote; 
     onSurpriseMeClick: () => void;
-    onCopyClick: () => void;
+    onCopyClick: () => void; 
+    isLoading: boolean; // NOVO: Propriedade para controlar o estado
 }
 export interface Quote {
     text: string;
     author: string;
     categorySlug: string; 
 }
-const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick }) => {
-    
+
+// Componente de carregamento (Spinner)
+const LoadingSpinner = () => (
+    <div className="flex flex-col items-center justify-center w-full min-h-[150px] text-[#CC7000]">
+        <span className="material-symbols-rounded text-4xl animate-spin">autorenew</span>
+        <p className="mt-2 text-sm font-semibold">Gerando inspiração...</p>
+    </div>
+);
+
+const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick, onCopyClick, isLoading }) => {    
  
     const cardClasses = ` 
         flex flex-col justify-between
@@ -29,7 +41,10 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick }) => 
     return (
         <div className={cardClasses}>
             
-            {/* frase e autor */}
+            {isLoading ? (
+                <LoadingSpinner />
+            ) : (
+            
             <div className="w-full bg-[#F2F2F2] ">
                 {/* Frase */}
                 <p className="
@@ -50,41 +65,35 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick }) => 
                     — {quote.author}
                     </p>
                 </p>
-            </div>
+            </div>)}
 
 
             {/* botão copiar e surpreenda-me) */}
-            <div className="
+            <div className={`
                 w-full 
                 flex justify-end items-center 
                 border-t border-gray-300 pt-3 mt-2 
                 gap-4
-            ">
+            ${isLoading ? 'opacity-50 pointer-events-none' : ''} 
+            `}>
                 
-                <button 
-                    className="
-                        flex items-center gap-1 
-                        text-sm font-semibold 
-                        text-gray-600 hover:text-[#CC7000]
-                        transition duration-200
-                        p-2 rounded-lg 
-                        flex-shrink-0                     
-                        min-w-fit                         
-                    "
+                {/* BOTÃO COPIAR (Agora é um ActionButton Secundário) */}
+                <ActionButton 
+                    name="Copiar"
+                    icon="content_copy"
+                    onClick={onCopyClick}
+                    isPrimary={false} // Estilo secundário (cinza)
+                    disabled={isLoading}
+                />
 
-                >
-                    <span className="material-symbols-rounded text-base">content_copy</span>
-                    Copiar
-                </button>
-
-                <LinkButton 
-                    href="#" 
-                    variant="primary" 
-                    onClick={onSurpriseMeClick}
-                >
-                    <span className="material-symbols-rounded text-base">featured_seasonal_and_gifts</span>
-                    Surpreenda-me
-                </LinkButton>
+                {/* BOTÃO SURPREENDA-ME (Agora é um ActionButton Primário) */}
+                <ActionButton 
+                    name="Surpreenda-me"           
+                    icon="casino"                  
+                    onClick={onSurpriseMeClick}    
+                    isPrimary={true} // Estilo primário (ocre)
+                    disabled={isLoading}
+                />
                 
             </div>
         </div>

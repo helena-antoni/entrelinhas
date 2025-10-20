@@ -6,53 +6,88 @@ import QuoteCards from '../QuoteCards';
 import { categories } from '../data/categories';
 import { Quote } from '../types';
 
+
 const initialQuote: Quote = {
-  text: "Clique em uma categoria ou em 'Surpreenda-me' para gerar uma nova frase inspiradora!",
-  author: "Entrelinhas AI",
-  categorySlug: ''
+  text: "Clique em uma categoria ou em 'Surpreenda-me' para gerar uma nova frase inspiradora!",
+  author: "Entrelinhas AI",
+  categorySlug: ''
 };
 
 const Main: React.FC = () => {
-    const [activeCategorySlug, setActiveCategorySlug] = useState<string>(categories[0].slug);
-    const [currentQuote, setCurrentQuote] = useState<Quote>(initialQuote);
-    
-    const [isLoading, setIsLoading] = useState<boolean>(false); 
+    const [activeCategorySlug, setActiveCategorySlug] = useState<string>(categories[0].slug);
+    const [currentQuote, setCurrentQuote] = useState<Quote>(initialQuote);
+    const [isLoading, setIsLoading] = useState<boolean>(false); 
 
-    const handleCopyClick = () => {
-        console.log('Ação de copiar!');
-        alert("Ação de copiar será implementada no Ponto 16!");
+    // function copy
+    const handleCopyClick = async () => {
+        // citação + autor
+        const textToCopy = `${currentQuote.text} — ${currentQuote.author}`;
+
+        try {
+            // Usa a API nativa do navegador para copiar o texto
+            await navigator.clipboard.writeText(textToCopy);
+            
+            alert("Citação copiada para a área de transferência!");
+
+        } catch (err) {
+            console.error('Falha ao copiar o texto: ', err);
+            alert("Falha ao copiar o texto. Tente novamente.");
+        }
     };
 
-    const simulateQuoteGeneration = (slug: string) => {
-        
+
+    // chamada API 
+    const generateQuote = async (category: string) => {
         setIsLoading(true);
-        console.log(`Buscando frase para a categoria: ${slug}`);
-        
-        setTimeout(() => {
 
-            setCurrentQuote({
-                text: `Nova frase gerada para ${slug.toUpperCase()}. Status: PRONTO!`,
-                author: "Gemini Simulado",
-                categorySlug: slug
+        try {
+            const response = await fetch('/api/generate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ category }),
             });
-            setIsLoading(false);
-        }, 1500); 
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setCurrentQuote(data as Quote); 
+            } else {
+                setCurrentQuote({ 
+                    text: data.error || 'Erro desconhecido ao buscar frase.', 
+                    author: 'Sistema',
+                    categorySlug: category
+                });
+                console.error('API Error:', data.error);
+            }
+
+        } catch (error) {
+            console.error('Fetch Error:', error);
+            setCurrentQuote({ 
+                text: 'Erro de conexão com o servidor.', 
+                author: 'Sistema',
+                categorySlug: category
+            });
+        } finally {
+            setIsLoading(false); 
+        }
     };
 
-    // categoria
-    const handleCategorySelect = (slug: string) => {
-        setActiveCategorySlug(slug);
-        simulateQuoteGeneration(slug);
-    };
+    // função real
+    const handleCategorySelect = (slug: string) => {
+        setActiveCategorySlug(slug);
+        generateQuote(slug);  
+    };
 
-    // surpreenda-me
-    const handleSurpriseMe = () => {
-        simulateQuoteGeneration('random');
-    };
+    // surpreenda-me:
+    const handleSurpriseMe = () => {
+        generateQuote('Aleatório');  
+    };
 
-  return (
-    <>       
-      <main className="w-full min-h-screen flex flex-col bg-white  
+  return (
+    <>       
+      <main className="w-full min-h-screen flex flex-col bg-white  
        pt-1 max-w-7xl mx-auto
       px-4 sm:px-6 md:px-8 pb-16
       ">
@@ -73,22 +108,22 @@ const Main: React.FC = () => {
                     onSelect={handleCategorySelect} 
                 />
             </div>
-          
+          
 
-          {/* Card da Frase */}
-            <div className="w-full mt-8">
-                <QuoteCards 
-                    quote={currentQuote} 
-                    onSurpriseMeClick={handleSurpriseMe} 
-                    onCopyClick={handleCopyClick}
-                    isLoading={isLoading} // PASSANDO O ESTADO DE CARREGAMENTO
-                />
-            </div>
-          
-        </section>
-      </main>
-    </>
-  );
+          {/* Card da Frase */}
+            <div className="w-full mt-8">
+                <QuoteCards 
+                    quote={currentQuote} 
+                    onSurpriseMeClick={handleSurpriseMe} 
+                    onCopyClick={handleCopyClick} // <--- FUNÇÃO DE CÓPIA IMPLEMENTADA AQUI
+                    isLoading={isLoading} 
+                />
+            </div>
+          
+        </section>
+      </main>
+    </>
+  );
 };
 
 export default Main;

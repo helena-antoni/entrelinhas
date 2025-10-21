@@ -8,20 +8,21 @@ const Header: React.FC = () => {
 
   return (
   
-    <header className="bg-[#F2F2F2] py-[16px]  shadow-sm">
+    <header className="bg-[#F2F2F2] py-[16px]  
+    shadow-[0_12px_16px_-4px_rgba(0,0,0,0.08),0_4px_6px_-2px_rgba(0,0,0,0.03)]
+    ">
 
       <div 
         className="
-          flex justify-between items-center 
+          flex justify-center items-center 
           px-[92px]             
           max-w-[1440px]        
           mx-auto               
         "
       > 
         
-       
       <a href="/">
-        <Image   ///PESQUISARRR
+        <Image  
           src={'logo.svg'} 
           alt="Logo Entrelinhas" 
           width={100}
@@ -30,8 +31,7 @@ const Header: React.FC = () => {
         />
       </a>
         
-
-      <nav className="hidden md:flex space-x-4">
+      {/* <nav className="hidden md:flex space-x-4">
         <LinkButton href="#" variant="secondary">
           About Us
         </LinkButton>
@@ -39,7 +39,7 @@ const Header: React.FC = () => {
         <LinkButton href="#" variant="secondary">
           Contact Us
         </LinkButton>
-      </nav>
+      </nav> */}
         
       </div>
     </header>

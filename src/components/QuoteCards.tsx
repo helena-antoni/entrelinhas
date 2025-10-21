@@ -25,8 +25,7 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick, onCop
         bg-[#F2F2F2]                 
         shadow-md           
         p-4 sm:p-6 lg:p-8 
-        md:text-3xl  max-full  
-        w-[1280px]
+        md:text-3xl  max-full   
         max-w-7xl 
          
     `;
@@ -81,7 +80,7 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick, onCop
                 {/* surpreenda-me*/}
                 <ActionButton 
                     name="Surpreenda-me"           
-                    icon="casino"                  
+                    icon="featured_seasonal_and_gifts"                  
                     onClick={onSurpriseMeClick}    
                     isPrimary={true}  
                     disabled={isLoading}

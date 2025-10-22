@@ -1,51 +1,102 @@
 import { GoogleGenAI } from '@google/genai';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-// O SDK do GoogleGenAI lê automaticamente a chave GEMINI_API_KEY
-// do seu arquivo .env.local.
 const ai = new GoogleGenAI({});
 
+const systemInstruction = `
+Você é Entrelinhas AI, você dá ao usuário frases dos temas que ele almeja conhecer ou reler. 
+Sua única função é criar uma única citação em português do Brasil (BR-PT) no tema exato solicitado pelo usuário.
+REGRAS RÍGIDAS DE FORMATAÇÃO E ESTRUTURA:
+1.  A citação deve ter no MÍNIMO 80 caracteres e no MÁXIMO 250 caracteres.
+2.  O autor deve ser famoso levando em conta quem é famoso em 2025. O autor deve ter um nome completo, notável ou fictício, relevante ao tema.
+3.  Você DEVE retornar APENAS o objeto JSON, sem nenhum texto introdutório, aspas simples ou Markdown ao redor do JSON.
+`;
+
+const quoteSchema = {
+  type: "object",
+  properties: {
+    frase: {
+      type: "string",
+      description: "Uma frase inspiradora, motivacional, aleatória ou de engraçada(que faz uma pessoa rir).",
+    },
+    autor: {
+      type: "string",
+      description: "O nome completo do autor da frase, pode ser um personagem histórico, fictício, desconhecido ou adequado ao tema famoso.",
+    },
+  },
+  required: ["frase", "autor"],
+};
+
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  // A rota só aceita o método POST para segurança e envio de dados.
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Método não permitido.' });
   }
 
-  // Extrai a categoria do corpo da requisição (JSON enviado pelo Main.tsx).
   const { category } = req.body;
   
   if (!category) {
     return res.status(400).json({ error: 'Categoria é obrigatória.' });
   }
 
-  // Instrução detalhada para o modelo Gemini.
-  const prompt = `Gere uma única frase inspiradora e motivacional sobre o tema de "${category}". O retorno DEVE ser APENAS o texto da frase, sem aspas ou o nome do autor, e deve ter até 25 palavras.`;
+  let specificInstruction = '';
+
+
+  switch (category.toLowerCase()) {
+    case 'engracada': 
+    case 'humor':
+      specificInstruction = 'Gere uma piada, piada de bar ou cite um meme brasileiro.';
+      break;
+      
+    case 'livros':
+      specificInstruction = 'Gere uma citação inspiradora de um livro famoso, best-seller ou um clássico da literatura famoso.';
+      break;
+      
+    case 'aleatorio': 
+    case 'surpreenda-me':
+      specificInstruction = 'Gere uma frase sobre um tema completamente inusitado que não se encaixe nas categorias Humor, Motivacional e de Livros.';
+      break;
+      
+    default:
+     
+      specificInstruction = `Gere uma única frase inspiradora e de impacto sobre o tema de "${category}". O autor deve ser uma figura notável ou um mentor.`;
+      break;
+  }
+  
+
+  const baseInstruction = `A frase deve ter entre 25 e 250 palavras. Você DEVE retornar APENAS o JSON.`;
+  const prompt = `${specificInstruction} ${baseInstruction}`;
 
   try {
-    // Chama a API Gemini.
+    
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
       contents: prompt,
+      config: {
+        responseMimeType: "application/json",
+        responseSchema: quoteSchema,
+      },
     });
     
-    // A linha abaixo estava falhando porque 'response' estava vazio devido à chave de API incorreta.
-    // O .trim() só é chamado se a propriedade 'text' for válida.
-    const quoteText = response.text.trim();
+
+
+    const responseText = response.text.trim();
+    const generatedData = JSON.parse(responseText);
+
     
-    // Retorna a resposta formatada para o frontend.
     res.status(200).json({ 
-      text: quoteText,
-      author: 'Entrelinhas AI' // Autor fixo
+        text: generatedData.frase,  
+        author: generatedData.autor,
+        categorySlug: category
     });
 
   } catch (error) {
-    // Este log aparecerá no console do seu terminal (servidor)
-    // e é a chave para diagnosticar problemas de API Key ou de limite.
+
     console.error('ERRO DETALHADO NA API GEMINI:', error); 
     
-    // Retorna uma resposta de erro para o frontend.
     res.status(500).json({ 
-      error: 'Falha ao gerar citação. Por favor, verifique se sua GEMINI_API_KEY está correta e se o serviço está ativo.' 
+      error: 'Falha ao gerar citação. Por favor, verifique se sua GEMINI_API_KEY está correta.' 
     });
   }
 }

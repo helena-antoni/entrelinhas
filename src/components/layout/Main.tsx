@@ -54,21 +54,9 @@ const Main: React.FC = () => {
             if (response.ok) {
                 setCurrentQuote(data as Quote); 
             } else {
-                setCurrentQuote({ 
-                    text: data.error || 'Erro desconhecido ao buscar frase.', 
-                    author: 'Sistema',
-                    categorySlug: category
-                });
-                console.error('API Error:', data.error);
             }
 
         } catch (error) {
-            console.error('Fetch Error:', error);
-            setCurrentQuote({ 
-                text: 'Erro de conexão com o servidor.', 
-                author: 'Sistema',
-                categorySlug: category
-            });
         } finally {
             setIsLoading(false); 
         }
@@ -77,12 +65,14 @@ const Main: React.FC = () => {
     // função real
      const handleCategorySelect = (slug: string) => {
         setActiveCategorySlug(slug);
-        generateQuote(slug);  
-     };
+        generateQuote(slug);  
+    };
 
     // surpreenda-me:
      const handleSurpriseMe = () => {
-         generateQuote('Aleatório');  
+        const handleSurpriseMe = () => {
+        generateQuote(activeCategorySlug);  
+    }; 
     };
 
     return (

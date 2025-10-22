@@ -8,7 +8,7 @@ export const categories: Category[] = [
         icon: 'restart_alt',
     },
      {
-        name: 'Pra Rir',
+        name: 'Engraçada',
         slug: 'humor',
         icon: 'comedy_mask',
     },

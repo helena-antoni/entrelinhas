@@ -1,5 +1,4 @@
-import React from 'react';
-import LinkButton from './ui/LinkButton'; 
+import React from 'react'; 
 import ActionButton from './ui/ActionButton';
 import { Quote } from './types';
 
@@ -37,7 +36,7 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick, onCop
                 <LoadingSpinner />
             ) : (
             
-            <div className="w-full flex flex-row bg-[#F2F2F2] text-[20px]">
+            <div className="w-full bg-[#F2F2F2] text-[20px]">
             
                 <p className="
                      md:text-xl font-normal 

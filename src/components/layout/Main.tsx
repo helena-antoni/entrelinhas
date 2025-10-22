@@ -89,30 +89,40 @@ const Main: React.FC = () => {
     <>       
       <main className="w-full min-h-screen flex flex-col bg-white  
        pt-1 max-w-7xl mx-auto
-      px-4 sm:px-6 md:px-8 pb-16
+      px-4 sm:px-8  
       ">
         
         <WelcomeSection />
         
         {/*cards*/}
-        <section className="container flex flex-col ">
+        <section className="container w-full items-left ">
           
-          <p className="md:text-3xl  max-full
-           font-indie  text-3xl font-normal  text-[#211D23] text-left">
+          <p className="md:text-3xl max-full pt-8 pb-8 
+          text-left font-indie font-normal text-[#211D23] 
+                
+                //Mobile
+                text-[22px] leading-[120%] tracking-[-0.44px]  
+                
+                //Tablet
+                md:text-[28px] md:leading-[130%] md:tracking-[-0.36px]  
+                
+                //Desktop (lg/1440px):
+                lg:text-[28px] lg:leading-[120%] lg:tracking-[-0.52px] 
+            
+     ">
             Escolha uma categoria ou deixe o acaso falar por você.
           </p>
         
           {/* Seletor de Categorias */}
-            <div className="w-full mt-8 sm:mt-10 md:mt-12">
+            <div className="w-full ">
                 <CategorySelector 
                     onSelect={handleCategorySelect} 
                 />
             </div>
-          
 
-          {/* Card da Frase */}
-            <div className="w-full mt-8">
-                <QuoteCards 
+            {/* Card da Frase */}
+            <div className="w-full mt-8">
+            <QuoteCards 
                     quote={currentQuote} 
                     onSurpriseMeClick={handleSurpriseMe} 
                     onCopyClick={handleCopyClick} // <--- FUNÇÃO DE CÓPIA IMPLEMENTADA AQUI

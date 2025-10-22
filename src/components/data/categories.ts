@@ -3,24 +3,24 @@ import { Category } from "../types";
 
 export const categories: Category[] = [
     {
-        name: 'Aleatório',
+        name: 'Aleatória',
         slug: 'random',
         icon: 'restart_alt',
     },
-    {
-        name: 'Motivacional',
-        slug: 'motivational',
-        icon: 'directions_walk', 
+     {
+        name: 'Pra Rir',
+        slug: 'humor',
+        icon: 'comedy_mask',
     },
     {
         name: 'Livros',
         slug: 'books',
         icon: 'book_ribbon',
     },
-    {
-        name: 'Pra Rir',
-        slug: 'humor',
-        icon: 'comedy_mask',
+   {
+        name: 'Motivacional',
+        slug: 'motivational',
+        icon: 'directions_walk', 
     },
     
 ];

@@ -25,12 +25,12 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({ name, icon, isActive, o
             className={`
                 ${baseClasses} 
                 ${stateClasses}
-                flex items-center gap-2 
+                flex items-center gap-2.5
             `}
         >
             {/* material symbols */}
             <span 
-                className="
+                className=" w-[24px] h-[24px]
                     material-symbols-rounded 
                     text-base
                 "

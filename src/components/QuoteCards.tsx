@@ -37,10 +37,10 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick, onCop
                 <LoadingSpinner />
             ) : (
             
-            <div className="w-full bg-[#F2F2F2] ">
+            <div className="w-full flex flex-row bg-[#F2F2F2] text-[20px]">
             
                 <p className="
-                    text-lg md:text-xl font-normal 
+                     md:text-xl font-normal 
                     font-indie-flower     
                     text-[#524F54]
                     whitespace-pre-wrap 
@@ -50,7 +50,7 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick, onCop
     
                     <span className="
                         w-full text-right 
-                        text-sm font-inter-semibold 
+                        text-[16px] font-inter-semibold 
                         text-[#524F54] italic 
                     ">
                     — {quote.author}
@@ -63,7 +63,7 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick, onCop
             <div className={`
                 w-full 
                 flex justify-end items-center 
-                border-t border-gray-300 pt-3 mt-2 
+                border-t text-[#524F54] pt-3 mt-2 
                 gap-4
             ${isLoading ? 'opacity-50 pointer-events-none' : ''} 
             `}>

@@ -11,7 +11,7 @@ interface CategorySelectorProps {
 
 const CategorySelector: React.FC<CategorySelectorProps> = ({ onSelect }) => {
     
-    const [activeSlug, setActiveSlug] = useState<string>('motivational');
+    const [activeSlug, setActiveSlug] = useState<string>('random');
 
     const handleSelect = (slug: string) => {
         setActiveSlug(slug);
@@ -19,7 +19,9 @@ const CategorySelector: React.FC<CategorySelectorProps> = ({ onSelect }) => {
     };
 
     return (
-        <div className="flex flex-wrap justify-left gap-9 pt-4 pb-8">
+        <div className="flex flex-wrap space-between text-1 gap-9   pb-8
+       
+        ">
             {categories.map((category: Category) => {
                 const isActive = category.slug === activeSlug;
 

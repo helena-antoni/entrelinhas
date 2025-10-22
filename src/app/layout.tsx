@@ -25,22 +25,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-    <meta charSet="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <meta charSet="UTF-8" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" 
-    rel="stylesheet"/>
+      <link rel="preconnect" href="https://fonts.googleapis.com"/>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+      <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" 
+      rel="stylesheet"/>
 
-    <link 
-      rel="stylesheet" 
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" 
-    />
+      <link 
+        rel="stylesheet" 
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" 
+      />
 
+      <title>Entrelinhas</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Entrelinhas</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

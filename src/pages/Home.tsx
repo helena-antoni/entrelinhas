@@ -1,13 +1,16 @@
-import Header from '../components/layout/Header'; 
-import Main from '../components/layout/Main';
+import Header from '../components/layout/Header';
+import Footer from '../components/layout/Footer';
+import Main from '../components/layout/Main'; 
 
-const Home = () => {
+export default function Home() {
+    return (
+        <div className="flex flex-col min-h-screen"> 
+            <Header />
+            <main className="flex-grow">
+                <Main /> 
+            </main>
 
-  return (
-    <>
-      <Header />
-      <Main />
-    </>
-  );
-};
-export default Home;
+            <Footer />
+        </div>
+    );
+}

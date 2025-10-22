@@ -8,7 +8,8 @@ const Header: React.FC = () => {
 
   return (
   
-    <header className="bg-[#F2F2F2] py-[16px]  
+    <header className="bg-[#F2F2F2] py-[16px] 
+    relative z-10 
     shadow-[0_12px_16px_-4px_rgba(0,0,0,0.08),0_4px_6px_-2px_rgba(0,0,0,0.03)]
     ">
 

@@ -74,20 +74,20 @@ const Main: React.FC = () => {
         }
     };
 
-    // função real
-    const handleCategorySelect = (slug: string) => {
-        setActiveCategorySlug(slug);
-        generateQuote(slug);  
-    };
+    // função real
+     const handleCategorySelect = (slug: string) => {
+        setActiveCategorySlug(slug);
+        generateQuote(slug);  
+     };
 
-    // surpreenda-me:
-    const handleSurpriseMe = () => {
-        generateQuote('Aleatório');  
-    };
+    // surpreenda-me:
+     const handleSurpriseMe = () => {
+         generateQuote('Aleatório');  
+    };
 
-  return (
-    <>       
-      <main className="w-full min-h-screen flex flex-col bg-white  
+    return (
+    <>  
+    <main className="w-full   flex flex-col bg-white  
        pt-1 max-w-7xl mx-auto
       px-4 sm:px-8  
       ">
@@ -123,17 +123,16 @@ const Main: React.FC = () => {
             {/* Card da Frase */}
             <div className="w-full mt-8">
             <QuoteCards 
-                    quote={currentQuote} 
-                    onSurpriseMeClick={handleSurpriseMe} 
-                    onCopyClick={handleCopyClick} // <--- FUNÇÃO DE CÓPIA IMPLEMENTADA AQUI
-                    isLoading={isLoading} 
-                />
-            </div>
-          
-        </section>
-      </main>
-    </>
-  );
+                quote={currentQuote} 
+                onSurpriseMeClick={handleSurpriseMe} 
+                onCopyClick={handleCopyClick} // <--- FUNÇÃO DE CÓPIA IMPLEMENTADA AQUI
+                isLoading={isLoading} 
+             />
+            </div>
+        </section>
+    </main>
+    </>
+ );
 };
 
 export default Main;

@@ -8,15 +8,15 @@ import { Quote } from '../types';
 
 
 const initialQuote: Quote = {
-  text: "Clique em uma categoria ou em 'Surpreenda-me' para gerar uma nova frase inspiradora!",
-  author: "Entrelinhas AI",
-  categorySlug: ''
+    text: "Clique em uma categoria ou em 'Surpreenda-me' para gerar uma nova frase inspiradora!", 
+    author: "Entrelinhas",
+    categorySlug: ''
 };
 
 const Main: React.FC = () => {
-    const [activeCategorySlug, setActiveCategorySlug] = useState<string>(categories[0].slug);
-    const [currentQuote, setCurrentQuote] = useState<Quote>(initialQuote);
-    const [isLoading, setIsLoading] = useState<boolean>(false); 
+    const [activeCategorySlug, setActiveCategorySlug] = useState<string>(categories[0].slug);
+    const [currentQuote, setCurrentQuote] = useState<Quote>(initialQuote);
+    const [isLoading, setIsLoading] = useState<boolean>(false); 
 
     // function copy
     const handleCopyClick = async () => {
@@ -97,9 +97,9 @@ const Main: React.FC = () => {
                 md:text-[28px] md:leading-[130%] md:tracking-[-0.36px]  
                 
                 //Desktop (lg/1440px):
-                lg:text-[28px] lg:leading-[120%] lg:tracking-[-0.52px] 
-            
-     ">
+                lg:text-[28px] lg:leading-[120%] lg:tracking-[-0.52px]
+             ">
+                
             Escolha uma categoria ou deixe o acaso falar por você.
           </p>
         

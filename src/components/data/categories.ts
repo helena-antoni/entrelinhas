@@ -3,12 +3,12 @@ import { Category } from "../types";
 
 export const categories: Category[] = [
     {
-        name: 'Aleatória',
+        name: 'Aleatório',
         slug: 'random',
         icon: 'restart_alt',
     },
      {
-        name: 'Engraçada',
+        name: 'Pra rir',
         slug: 'humor',
         icon: 'comedy_mask',
     },

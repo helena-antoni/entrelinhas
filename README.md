@@ -1,10 +1,10 @@
 # Entrelinhas 
 
 ## 👩‍💻 Autoria
-* **Desenvolvimento (Frontend & Backend):** [Helena Antoni](https://www.github.com/in/helena-antoni/) 
+* **Desenvolvimento (Frontend & Backend):** [Helena Antoni](https://github.com/helena-antoni) 
   _(Clique para acessar o portfólio)_
 
-* **Design (UI/UX):** [Ester Pinheiro]([https://github.com/estercopinheiro]) 
+* **Design (UI/UX):** [Ester Pinheiro](https://github.com/estercopinheiro)
   _(Clique para acessar o portfólio)_
 
 
@@ -40,7 +40,7 @@ O projeto é uma colaboração: a interface e o design foram criados pela design
 
 ## ⚙️ Configuração Local e Execução
 
-### 📋 Pré-requisitos e Setup
+### Pré-requisitos e Setup
 Para clonar e rodar este projeto na sua máquina (ambiente de desenvolvimento), siga os passos abaixo:
 
 * **Pré-requisitos:** Você precisará ter o **Node.js** (versão 18+) instalado.

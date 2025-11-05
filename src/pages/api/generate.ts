@@ -94,7 +94,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     });
     
 
-    const responseText = response.text.trim();
+    const responseText = response.text!.trim();
     const generatedData = JSON.parse(responseText);
 
     

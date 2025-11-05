@@ -132,7 +132,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     console.error('ERRO GERAL NA API GEMINI:', error); 
     
     res.status(500).json({ 
-      error: 'Falha na comunicação. Verifique sua GEMINI_API_KEY na Vercel.' 
+      error: 'Falha na comunicação. Verifique sua GEMINI_API_KEY.' 
     });
   }
 }

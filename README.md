@@ -1,11 +1,12 @@
 # Entrelinhas 
 
-## 👩‍💻 Autoria
+## ©️ Autoria
+* **Design (UI/UX):** [Ester Pinheiro](https://bento.me/ester-pinheiro)
+  _(Clique para acessar o portfólio)_
+
 * **Desenvolvimento (Frontend & Backend):** [Helena Antoni](https://github.com/helena-antoni) 
   _(Clique para acessar o portfólio)_
 
-* **Design (UI/UX):** [Ester Pinheiro](https://github.com/estercopinheiro)
-  _(Clique para acessar o portfólio)_
 
 
 
@@ -96,5 +97,5 @@ Quer falar sobre o código, design ou simplesmente conectar? Estamos abertas a n
 
 | Colaboradora | GitHub | LinkedIn | Email |
 | :--- | :--- | :--- | :--- |
-| **Helena Antoni (Dev)** | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/helena-antoni) | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/helena-antoni/) | [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:helena.antoni.dev@gmail.com) |
-| **Ester Pinheiro (Design)** | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/estercopinheiro) | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ester-pinheiro/) | [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ester.copinheiro@gmail.com) |
+| **Ester Pinheiro (Design)** | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/estercopinheiro) | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ester-pinheiro/) | ester.copinheiro@gmail.com
+| **Helena Antoni (Dev)** | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/helena-antoni) | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/helena-antoni/) | helena.antoni.dev@gmail.com| 

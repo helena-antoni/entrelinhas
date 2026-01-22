@@ -17,31 +17,30 @@ const ActionButton: React.FC<ActionButtonProps> = ({
     disabled = false
 }) => {
     
-    const baseClasses = isPrimary 
-        ? SECONDARY_BUTTON_CLASSES 
-        : `
-            flex items-center gap-1 
-            text-sm font-semibold 
-            text-[#4C2A00] hover:text-[#4C2A00]
-            transition duration-200
-            p-2 rounded-lg 
-           
-        `;
+const baseClasses = isPrimary 
+    ? SECONDARY_BUTTON_CLASSES 
+    : `
+        flex items-center gap-1 
+        text-sm font-semibold 
+        text-[#4C2A00] hover:text-[#663800] hover:cursor-pointer
+        transition duration-300
+        p-2 rounded-lg 
+    `;
 
-    return (
-        <button 
-            onClick={onClick}
-            type="button"
-            className={` 
-                ${baseClasses}
-                flex-shrink-0 
-                ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
-            `}
-            disabled={disabled}
-        >
-            <span className="material-symbols-rounded text-base">{icon}</span>
-            {name}
-        </button>
+return (
+    <button 
+        onClick={onClick}
+        type="button"
+        className={` 
+            ${baseClasses}
+            flex-shrink-0 
+            ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
+        `}
+        disabled={disabled}
+    >            
+    <span className="material-symbols-rounded text-base">{icon}</span>
+        {name}
+    </button>
     );
 };
 

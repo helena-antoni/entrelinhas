@@ -8,9 +8,9 @@ import { Quote } from '../types';
 
 
 const initialQuote: Quote = {
-    text: "Clique em uma categoria ou em 'Surpreenda-me' para gerar uma nova frase inspiradora!", 
-    author: "Entrelinhas",
-    categorySlug: ''
+    text: "Uma merda bem feita ainda continua sendo uma merda.", 
+    author: "Soares, Horácio",
+    categorySlug: 'random,'
 };
 
 const Main: React.FC = () => {
@@ -105,7 +105,7 @@ const Main: React.FC = () => {
             </div>
 
             {/* Card da Frase */}
-            <div className="w-full mt-8">
+            <div className="w-full ">
             <QuoteCards 
                 quote={currentQuote}  
                 onCopyClick={handleCopyClick}  

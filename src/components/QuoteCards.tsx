@@ -9,9 +9,9 @@ interface QuoteCardsProps {
 }
  
 const LoadingSpinner = () => (
-    <div className="flex flex-col items-center justify-center w-full min-h-[150px] text-[#4C2A00]">
-        <span className="material-symbols-rounded text-3xl animate-spin">autorenew</span>
-        <p className="mt-2 text-sm font-semibold">Gerando inspiração...</p>
+    <div className="flex flex-col items-center justify-center w-full min-h-[16px] pb-[16px] text-[#4C2A00]">
+        <span className="material-symbols-rounded text-1xl  animate-spin">autorenew</span>
+        <p className=" text-sm font-bold">Gerando inspiração...</p>
     </div>
 );
 
@@ -35,15 +35,12 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onCopyClick, isLoading }
                 <LoadingSpinner />
             ) : (
             
-            <div className="w-full  text-[20px]">
-            
+            <div className="w-full pb-4 text-[20px]  "> 
                 <p className="
-                     md:text-xl font-normal 
-                     pb-4
+                     font-normal  
                     font-indie-flower     
                     text-[#4C2A00]
-                    whitespace-pre-wrap 
-                    
+                    whitespace-pre-wrap  
                     ">
                     "{quote.text}"
     
@@ -60,7 +57,7 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onCopyClick, isLoading }
 
             {/* copiar */}
             <div className={`
-                w-full 
+                w-full  
                 flex justify-end items-center 
                 border-t border-[#4C2A00] pt-2
                 gap-4

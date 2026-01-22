@@ -23,7 +23,7 @@ const Header: React.FC = () => {
       <div className="flex items-center gap-1 p-0">
         <button 
           onClick={() => setTheme('light')}
-          className={theme === 'light' ? PRIMARY_BUTTON_CLASSES_HEADER : SECONDARY_BUTTON_CLASSES_HEADER}
+          className={`${theme === 'light' ? PRIMARY_BUTTON_CLASSES_HEADER : SECONDARY_BUTTON_CLASSES_HEADER} w-11 h-11 flex items-center justify-center`}
           title="Modo Claro"
         >
           <span className="material-symbols-rounded ">light_mode</span>
@@ -33,7 +33,7 @@ const Header: React.FC = () => {
 
         <button 
           onClick={() => setTheme('dark')}
-          className={theme === 'dark' ? PRIMARY_BUTTON_CLASSES_HEADER : SECONDARY_BUTTON_CLASSES_HEADER}
+          className={`${theme === 'dark' ? PRIMARY_BUTTON_CLASSES_HEADER : SECONDARY_BUTTON_CLASSES_HEADER} w-11 h-11 flex items-center justify-center`}
           title="Modo Escuro"
          >
           <span className="material-symbols-rounded ">dark_mode</span>

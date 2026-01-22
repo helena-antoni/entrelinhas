@@ -19,7 +19,7 @@ const CategorySelector: React.FC<CategorySelectorProps> = ({ onSelect }) => {
     };
 
     return (
-        <div className="flex flex-wrap space-between text-1 gap-9   pb-8 ">
+        <div className="flex flex-wrap space-between text-1 pb-8  gap-9  ">
             {categories.map((category: Category) => {
                 const isActive = category.slug === activeSlug;
 

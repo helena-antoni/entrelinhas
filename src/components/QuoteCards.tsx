@@ -3,25 +3,24 @@ import ActionButton from './ui/ActionButton';
 import { Quote } from './types';
 
 interface QuoteCardsProps {
-    quote: Quote; 
-    onSurpriseMeClick: () => void;
+    quote: Quote;  
     onCopyClick: () => void; 
     isLoading: boolean; 
 }
  
 const LoadingSpinner = () => (
-    <div className="flex flex-col items-center justify-center w-full min-h-[150px] text-[#CC7000]">
-        <span className="material-symbols-rounded text-4xl animate-spin">autorenew</span>
+    <div className="flex flex-col items-center justify-center w-full min-h-[150px] text-[#4C2A00]">
+        <span className="material-symbols-rounded text-3xl animate-spin">autorenew</span>
         <p className="mt-2 text-sm font-semibold">Gerando inspiração...</p>
     </div>
 );
 
-const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick, onCopyClick, isLoading }) => {    
+const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onCopyClick, isLoading }) => {    
  
     const cardClasses = ` 
         flex flex-col justify-between
         rounded-2xl 
-        bg-[#F2F2F2]                 
+        bg-[#FFE8CC]                 
         shadow-md           
         p-4 sm:p-6 lg:p-8 
         md:text-3xl  max-full   
@@ -36,12 +35,13 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick, onCop
                 <LoadingSpinner />
             ) : (
             
-            <div className="w-full bg-[#F2F2F2] text-[20px]">
+            <div className="w-full  text-[20px]">
             
                 <p className="
                      md:text-xl font-normal 
+                     pb-4
                     font-indie-flower     
-                    text-[#524F54]
+                    text-[#4C2A00]
                     whitespace-pre-wrap 
                     
                     ">
@@ -50,7 +50,7 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick, onCop
                     <span className="
                         w-full text-right 
                         text-[16px] font-inter-semibold 
-                        text-[#524F54] italic 
+                        text-[#4C2A00] italic 
                     ">
                     — {quote.author}
                     </span>
@@ -58,33 +58,22 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onSurpriseMeClick, onCop
             </div>)}
 
 
-            {/* copiar e surpreenda-me */}
+            {/* copiar */}
             <div className={`
                 w-full 
                 flex justify-end items-center 
-                border-t text-[#524F54] pt-3 mt-2 
+                border-t border-[#4C2A00] pt-2
                 gap-4
             ${isLoading ? 'opacity-50 pointer-events-none' : ''} 
             `}>
                 
-                {/*copiar */}
                 <ActionButton 
                     name="Copiar"
                     icon="content_copy"
                     onClick={onCopyClick}
-                    isPrimary={false} // cinza
+                    isPrimary={false}  
                     disabled={isLoading}
-                />
-
-                {/* surpreenda-me*/}
-                <ActionButton 
-                    name="Surpreenda-me"           
-                    icon="featured_seasonal_and_gifts"                  
-                    onClick={onSurpriseMeClick}    
-                    isPrimary={true}  
-                    disabled={isLoading}
-                />
-                
+                /> 
             </div>
         </div>
     );

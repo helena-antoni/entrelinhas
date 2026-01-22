@@ -1,5 +1,5 @@
 import React from 'react';
-import { PRIMARY_BUTTON_CLASSES, SECONDARY_BUTTON_CLASSES } from '../../utils/styleUtils';
+import { PRIMARY_BUTTON_CLASSES, SECONDARY_BUTTON_CLASSES } from '../../utils/styeButtons';
 
 interface LinkButtonProps {
   href: string;

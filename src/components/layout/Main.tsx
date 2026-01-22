@@ -62,22 +62,16 @@ const Main: React.FC = () => {
         }
     };
 
-    // função real
+    // função  
      const handleCategorySelect = (slug: string) => {
         setActiveCategorySlug(slug);
         generateQuote(slug);  
     };
-
-    // surpreenda-me:
-     const handleSurpriseMe = () => {
-        const handleSurpriseMe = () => {
-        generateQuote(activeCategorySlug);  
-    }; 
-    };
+ 
 
     return (
     <>  
-    <main className="w-full   flex flex-col bg-white  
+    <main className="w-full   flex flex-col 
        pt-1 max-w-7xl mx-auto
       px-4 sm:px-8  
       ">
@@ -88,7 +82,7 @@ const Main: React.FC = () => {
         <section className="container w-full items-left ">
           
           <p className="md:text-3xl max-full pt-8 pb-8 
-          text-left font-indie font-normal text-[#211D23] 
+          text-left font-indie font-normal text-[#4C2A00] 
                 
                 //Mobile
                 text-[22px] leading-[120%] tracking-[-0.44px]  
@@ -113,9 +107,8 @@ const Main: React.FC = () => {
             {/* Card da Frase */}
             <div className="w-full mt-8">
             <QuoteCards 
-                quote={currentQuote} 
-                onSurpriseMeClick={handleSurpriseMe} 
-                onCopyClick={handleCopyClick} // <--- FUNÇÃO DE CÓPIA IMPLEMENTADA AQUI
+                quote={currentQuote}  
+                onCopyClick={handleCopyClick}  
                 isLoading={isLoading} 
              />
             </div>

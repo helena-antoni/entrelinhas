@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { PRIMARY_BUTTON_CLASSES } from '../../utils/styleUtils'; 
+import { PRIMARY_BUTTON_CLASSES, SECONDARY_BUTTON_CLASSES } from '../../utils/styeButtons'; 
 
 interface CategoryButtonProps {
     name: string;
@@ -12,33 +11,19 @@ interface CategoryButtonProps {
 
 const CategoryButton: React.FC<CategoryButtonProps> = ({ name, icon, isActive, onClick }) => {
     
-    const baseClasses = PRIMARY_BUTTON_CLASSES;
-
-    const stateClasses = isActive 
-        ?'bg-warm-ochre text-white shadow-md' 
-        : 'border border-warm-ochre bg-white text-warm-ochre'; 
+    const buttonStyle = isActive ? PRIMARY_BUTTON_CLASSES : SECONDARY_BUTTON_CLASSES;
 
     return (
-        <button
+       <button
             onClick={onClick}
             type="button"
-            className={`
-                ${baseClasses} 
-                ${stateClasses}
-                flex items-center gap-2.5
-            `}
+            className={buttonStyle}
         >
-            {/* material symbols */}
-            <span 
-                className=" w-[24px] h-[24px]
-                    material-symbols-rounded 
-                    text-base
-                "
-            >
+            <span className="material-symbols-rounded text-[20px]">
                 {icon}
             </span>
             
-            {/* categoria */}
+            {/* Nome da categoria */}
             {name}
         </button>
     );

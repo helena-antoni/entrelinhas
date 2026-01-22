@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import heartfooter from 'heart-footer.svg';
 
 const Footer: React.FC = () => { 
     const highlightText = "text-b"; 
@@ -8,7 +9,7 @@ const Footer: React.FC = () => {
    return (
         <footer className="
             w-full 
-            bg-[#F2F2F2] 
+            bg-[#FFE8CC] 
             border-t border-gray-200
             
             pt-[176px] pb-[176px]             /* Mobile (~474px total) */
@@ -39,40 +40,36 @@ const Footer: React.FC = () => {
                 </div>
 
                 {/* info e crédito */}
-                <div className="
-                    w-full 
-                    lg:w-auto
+                <div className=" w-full lg:w-auto md:border-l md:border-gray-400/50 md:pl-8 lg:pl-10 lg:text-right text-[#4C2A00]  text-[16px] ">
                     
-                    // --- RISCO VERTICAL (Tablet e Desktop) ---
-                    md:border-l md:border-gray-400/50 
-                    md:pl-8 lg:pl-10 
-                    
-                    // Alinhamento do texto no desktop
-                    lg:text-right
-                ">
-                    <p className="
-                        font-indie font-normal 
-                        text-xl md:text-2xl 
-                        text-[#4C2A00] 
-                        mb-2 
-                        lg:mb-1
-                    ">
+                    <p className=" font-indie font-normal text-xl md:text-2xl  leading-[-22%] mb-2 lg:mb-1 ">
                         "Entrelinhas – porque o que importa está no meio das linhas."
                     </p>
 
-                    <p className={`mt-1 text-xs sm:text-sm leading-[150%]  
-                        font-inter text-center text-[#663800] font-normal text-[18px] 
-                         lg:text-right `}>
-                        Designed by 
+                    <p className={`leading-[150%] font-medium text-left`}>
+                        &copy; 2026 Entrelinhas. Todos os direitos reservados.
+                    </p>
+
+                    <p className={` flex items-center justify-center lg:justify-start gap-1  
+                        mt-3 text-xs sm:text-sm leading-[150%] text-left  font-inter font-normal
+                        lg:text-left `}> 
+                        Feito com 
+                        <Image 
+                            src="/heart-footer.svg"
+                            alt="Ícone do coração" 
+                            width={20} 
+                            height={18.35}  
+                        />
+                        por 
                         <a 
                         target="_blank"
                         href='https://github.com/estercopinheiro'
-                        className={"font-bold"}> <span className='hover:bg-[#FFF3E5]'>Ester Pinheiro</span> </a> 
-                        & Developed by 
+                        className={"font-bold"}> <span className=' bg-[#FFAE4C] p-1.5 rounded-[12px] hover:bg-[#FFF3E5]'>Ester Pinheiro</span> </a> 
+                        e
                         <a 
                         target="_blank"
                         href='https://github.com/helena-antoni'
-                        className={"font-bold"}> <span className='hover:bg-[#FFF3E5]'>Helena Antoni</span> </a>
+                        className={"font-bold"}> <span className='bg-[#FFAE4C] p-1.5 rounded-[12px] hover:bg-[#FFF3E5]'>Helena Antoni</span> </a>
                     </p>
                 </div>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SECONDARY_BUTTON_CLASSES } from '../../utils/styleUtils';
+import { SECONDARY_BUTTON_CLASSES } from '../../utils/styeButtons';
 
 interface ActionButtonProps {
     name: string;
@@ -22,7 +22,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
         : `
             flex items-center gap-1 
             text-sm font-semibold 
-            text-[#663800] hover:text-[#CC7000]
+            text-[#4C2A00] hover:text-[#4C2A00]
             transition duration-200
             p-2 rounded-lg 
            

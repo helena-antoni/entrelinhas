@@ -4,10 +4,13 @@ const BASE_BUTTON_CLASSES =
 
 export const PRIMARY_BUTTON_CLASSES = `
   ${BASE_BUTTON_CLASSES}
-  text-[#663800] shadow-md bg-[#CC7000] hover:text-[#663800] hover:bg-[#FFF3E5]
+  text-[#FFE8CC] bg-[#4C2A00] hover:text-[#FFE8CC] hover:bg-[#663800] shadow-md cursor-pointer
+  
 `;
 
 export const SECONDARY_BUTTON_CLASSES = `
   ${BASE_BUTTON_CLASSES}
-  bg-warm-ochre bg-[#CC7000] hover:bg-[#A85A00] text-white shadow-md
+      text-[#4C2A00] hover:text-[#FFE8CC] hover:bg-[#663800]  cursor-pointer
 `;
+
+ 

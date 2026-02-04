@@ -6,23 +6,14 @@ import line from '../../assets/line-between-lines.svg';
 
 const Footer: React.FC = () => {  
    return (
-        <footer className="
-            w-full 
-            bg-[#FFE8CC] 
-            border-t border-gray-200
-            
-            pt-[176px] pb-[176px]            
-            md:pt-[104px] md:pb-[104px]       
-            lg:pt-[44px] lg:pb-[44px]       
-        ">
-            <div className=" 
-                max-w-[1440px] mx-auto 
-                px-6 text-center  sm:px-12 lg:px-24 
-                flex flex-col  gap-8 md:gap-12 lg:gap-0                
-                lg:flex-row lg:justify-between lg:items-center
-                
-               
-            ">
+    <footer className="w-full bg-[#FFE8CC] mt-[133px] md:mt-52 lg:mt-40
+        relative z-20 overflow-hidden
+        shadow-[0_-12px_16px_-4px_rgba(0,0,0,0.08),0_4px_6px_-2px_rgba(0,0,0,0.03)]">
+        <div className=" 
+            max-w-[1440px] mx-auto 
+            px-6 text-center  sm:px-12 lg:px-24 
+            flex flex-col  gap-8 md:gap-12 lg:gap-0                
+            lg:flex-row lg:justify-between lg:items-center  ">
                 <div className="
                     w-full 
                     lg:w-auto 

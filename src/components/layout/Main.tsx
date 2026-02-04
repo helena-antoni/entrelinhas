@@ -70,7 +70,7 @@ const Main: React.FC = () => {
 
     return (
     <>  
-    <main className="w-full min-h-screen bg-[#FFF3E5]">
+    <main className="w-full bg-[#FFF3E5]">
         <div className="flex flex-col mx-auto w-full max-w-[1440px]
             px-6 pt-10 md:pt-16 md:px-12 lg:px-[92px] lg:pt-20 ">
          

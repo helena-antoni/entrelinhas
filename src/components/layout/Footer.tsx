@@ -1,20 +1,19 @@
 import React from 'react';
 import Image from 'next/image';
 import heartfooter from 'heart-footer.svg';
+import line from '../../assets/line-between-lines.svg';
+  
 
-const Footer: React.FC = () => { 
-    const highlightText = "text-b"; 
-    const copyrightStyle = "text-[#663800] text-[18px] leading-[150%] font-normal ";  
-
+const Footer: React.FC = () => {  
    return (
         <footer className="
             w-full 
             bg-[#FFE8CC] 
             border-t border-gray-200
             
-            pt-[176px] pb-[176px]             /* Mobile (~474px total) */
-            md:pt-[104px] md:pb-[104px]       /* Tablet (~291px total) */
-            lg:pt-[44px] lg:pb-[44px]         /* Desktop (~148px total) */
+            pt-[176px] pb-[176px]            
+            md:pt-[104px] md:pb-[104px]       
+            lg:pt-[44px] lg:pb-[44px]       
         ">
             <div className=" 
                 max-w-[1440px] mx-auto 
@@ -55,10 +54,11 @@ const Footer: React.FC = () => {
                         lg:text-left `}> 
                         Feito com 
                         <Image 
-                            src="/heart-footer.svg"
+                            src={"/heart-footer.svg"}
                             alt="Ícone do coração" 
                             width={20} 
                             height={18.35}  
+                            className='w-[20px] h-[18.35]'
                         />
                         por 
                         <a 
@@ -73,6 +73,16 @@ const Footer: React.FC = () => {
                     </p>
                 </div>
 
+            </div>
+            
+            <div className="mx-auto w-full max-w-[1440px]  md:pt-2.5 lg:pt-2.5 pt-2 flex-shrink-0">
+                <Image  
+                    src={line} 
+                    alt="Linha laranja" 
+                    width={1248}  
+                    height={47}
+                    className="w-full h-auto" 
+                />
             </div>
         </footer>
     );

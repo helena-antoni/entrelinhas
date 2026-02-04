@@ -2,34 +2,30 @@ import React from 'react';
 
 const WelcomeSection: React.FC = () => {
   return (
-    <section className="w-full items-left font-indie font-normal  
-    p-0 mt-16  ">
+    <section className="w-full text-left font-indie font-normal p-0    ">
       
-      <h1 className="
-        // Mobile: 
-        text-[44px] leading-[120%] tracking-[-0.44px] text-[#4C2A00] 
+      <h1 className=" text-[#1F160D] 
+        // Mobile 
+        text-[44px] leading-[110%] tracking-[-0.44px]
                 
         //Tablet 
-        md:text-[52px] md:leading-[130%] md:tracking-[-0.36px] 
-        md:text-[#4C2A00]
+        // md:text-[52px] md:leading-[130%] md:tracking-[-0.36px]
                 
         // Desktop
-        lg:text-[52px] lg:leading-[120%] lg:tracking-[-0.52px] 
-        lg:text-[#4C2A00]
-        ">
+        lg:text-[52px] lg:leading-[120%] lg:tracking-[-0.52px]">
+
         Bem-vindo(a) ao Entrelinhas!
-        </h1>
-       <p className="
+      </h1>
+      <p className=" text-[#4C2A00] 
           // Mobile
-          text-[28px] leading-[120%] tracking-[-0.44px]  
+          text-[28px] leading-[140%] tracking-[-0.44px]  
                 
           // Tablet 
           md:text-[36px] md:leading-[130%] md:tracking-[-0.36px] 
-          md:text-[#663800]
+         
                 
-          // Desktop: 
-                 
-          font-indie  text-3xl text-[#663800] text-left">
+          // Desktop:        
+          font-indie  text-3xl text-left">
 
           Um lugar onde as palavras encontram quem precisa ouvi-las.
         </p>

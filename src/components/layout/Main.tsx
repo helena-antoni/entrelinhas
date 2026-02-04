@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import WelcomeSection from '../ui/WelcomeSection'; 
 import CategorySelector from '../ui/CategorySelector';
 import QuoteCards from '../QuoteCards';
- 
+
+
 import { categories } from '../data/categories';
 import { Quote } from '../types';
 
@@ -35,7 +36,6 @@ const Main: React.FC = () => {
         }
     };
 
-
     // chamada API 
     const generateQuote = async (category: string) => {
         setIsLoading(true);
@@ -67,52 +67,49 @@ const Main: React.FC = () => {
         setActiveCategorySlug(slug);
         generateQuote(slug);  
     };
- 
 
     return (
     <>  
-    <main className="w-full   flex flex-col 
-       pt-1 max-w-7xl mx-auto
-      px-4 sm:px-8  
-      ">
-        
-        <WelcomeSection />
-        
-        {/*cards*/}
-        <section className="container w-full items-left ">
-          
-          <p className="md:text-3xl max-full pt-8 pb-8 
-          text-left font-indie font-normal text-[#4C2A00] 
+    <main className="w-full min-h-screen bg-[#FFF3E5]">
+        <div className="flex flex-col mx-auto w-full max-w-[1440px]
+            px-6 pt-10 md:pt-16 md:px-12 lg:px-[92px] lg:pt-20 ">
+         
+            <WelcomeSection />
+            
+            <section className="container w-full items-left ">
                 
-                //Mobile
-                text-[22px] leading-[120%] tracking-[-0.44px]  
+                <p className="md:text-3xl max-full pt-8 pb-8 
+                    text-left font-indie font-normal text-[#4C2A00] 
+                        
+                    //Mobile
+                    text-[22px] leading-[140%] tracking-[-0.22px]  
+                        
+                    //Tablet
+                    md:text-[28px] md:leading-[130%] md:tracking-[-0.36px]  
+                        
+                    //Desktop (lg/1440px):
+                    lg:text-[28px] lg:leading-[120%] lg:tracking-[-0.52px]
+                ">
+                    Escolha uma categoria ou deixe o acaso falar por você.
+                </p>
                 
-                //Tablet
-                md:text-[28px] md:leading-[130%] md:tracking-[-0.36px]  
-                
-                //Desktop (lg/1440px):
-                lg:text-[28px] lg:leading-[120%] lg:tracking-[-0.52px]
-             ">
-                
-            Escolha uma categoria ou deixe o acaso falar por você.
-          </p>
-        
-          {/* Seletor de Categorias */}
-            <div className="w-full ">
-                <CategorySelector 
-                    onSelect={handleCategorySelect} 
-                />
-            </div>
+                {/* Seletor de Categorias */}
+                    <div className="w-full ">
+                        <CategorySelector 
+                            onSelect={handleCategorySelect} 
+                        />
+                    </div>
 
-            {/* Card da Frase */}
-            <div className="w-full ">
-            <QuoteCards 
-                quote={currentQuote}  
-                onCopyClick={handleCopyClick}  
-                isLoading={isLoading} 
-             />
-            </div>
-        </section>
+                    {/* Card da Frase */}
+                    <div className="w-full ">
+                    <QuoteCards 
+                        quote={currentQuote}  
+                        onCopyClick={handleCopyClick}  
+                        isLoading={isLoading} 
+                    />
+                </div>
+            </section>
+        </div>
     </main>
     </>
  );

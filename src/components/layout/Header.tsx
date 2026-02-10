@@ -13,7 +13,7 @@ const Header: React.FC = () => {
           
       <a href="/">
         <Image  
-          src={theme === 'dark' ? 'logo-light-mode.svg' : 'logo-dark-mode.svg'}          alt="Logo Entrelinhas" 
+         src={theme === 'light' ? 'logo-light-mode.svg' : 'logo-dark-mode.svg'}          alt="Logo Entrelinhas" 
           width={103}
           height={36}
           className="h-8 md:h-9 w-auto " 

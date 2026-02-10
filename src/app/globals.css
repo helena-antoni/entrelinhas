@@ -3,11 +3,29 @@
 
 @layer base {
   :root {
-    /* --font-indie: 'Indie Flower', cursive; */
     --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+ 
+    --background-site: #FFF3E5;
+    --background-card: #FFE8CC;
+    --text-primary: #4C2A00;
+    --button-pressed: #4C2A00;
+    --button-hover: #FFAE4C;
+    --color-icons:#663800;
+    
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+ 
+  } 
 
-    --color-warm-ochre: #CC7000;
-    --color-ochre-dark-text: #663800;
+  .dark {
+    --background-site: #1F160D; 
+    --background-card: #4C2A00; 
+    --text-primary: #FFE8CC;
+    --button-pressed: #FFE8CC;   
+    --button-hover: #663800;   
+  }
+
+  body {
+    @apply bg-[var(--background-site)] text-[var(--text-primary)] transition-colors duration-300;
   }
 }
 

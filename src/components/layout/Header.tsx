@@ -6,18 +6,17 @@ const Header: React.FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   return (
-  <header className="bg-[#FFE8CC] py-[24px] relative z-10 shadow-[0_12px_16px_-4px_rgba(0,0,0,0.08),0_4px_6px_-2px_rgba(0,0,0,0.03)]">
+  <header className="bg-[var(--bg-card)] py-[24px] relative z-10 shadow-[0_12px_16px_-4px_rgba(0,0,0,0.08),0_4px_6px_-2px_rgba(0,0,0,0.03)]">
 
     <div className="flex justify-between items-center mx-auto max-w-[1440px]
       px-6 md:px-12 lg:px-[92px]"> 
           
       <a href="/">
         <Image  
-          src={'logo-entrelinhas.svg'} 
-          alt="Logo Entrelinhas" 
+          src={theme === 'dark' ? 'logo-light-mode.svg' : 'logo-dark-mode.svg'}          alt="Logo Entrelinhas" 
           width={103}
           height={36}
-          className="h-8 md:h-9 w-auto" 
+          className="h-8 md:h-9 w-auto " 
         />
       </a> 
           
@@ -30,7 +29,7 @@ const Header: React.FC = () => {
           <span className="material-symbols-rounded ">wb_sunny</span>
         </button>
           
-        <div className="w-[2px] h-9 bg-[#4C2A00]" aria-hidden="true"></div>
+        <div className="w-[2px] h-9 bg-[var(--button-pressed)]" aria-hidden="true"></div>
 
         <button 
           onClick={() => setTheme('dark')}

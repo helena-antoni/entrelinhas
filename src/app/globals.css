@@ -5,8 +5,8 @@
   :root {
     --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
  
-    --background-site: #FFF3E5;
-    --background-card: #FFE8CC;
+    --bg-site: #FFF3E5;
+    --bg-card: #FFE8CC;
     --text-primary: #4C2A00;
     --button-pressed: #4C2A00;
     --button-hover: #FFAE4C;
@@ -17,8 +17,8 @@
   } 
 
   .dark {
-    --background-site: #1F160D; 
-    --background-card: #4C2A00; 
+    --bg-site: #1F160D; 
+    --bg-card: #4C2A00; 
     --text-primary: #FFE8CC;
     --button-pressed: #FFE8CC;   
     --button-hover: #663800;   

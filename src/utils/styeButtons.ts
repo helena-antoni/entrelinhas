@@ -9,24 +9,24 @@ const BASE_BUTTON_CLASSES_HEADER =
 
 export const PRIMARY_BUTTON_CLASSES = `
   ${BASE_BUTTON_CLASSES}
-  text-[#FFE8CC] bg-[#4C2A00] hover:text-[#FFE8CC] hover:bg-[#663800] shadow-md cursor-pointer
+  text-[var(--bg-card)] bg-[var(--button-pressed)] hover:text-[var(--button-hover)] hover:bg-[var(--color-icons)] shadow-md cursor-pointer
   
 `;
 
 export const SECONDARY_BUTTON_CLASSES = `
   ${BASE_BUTTON_CLASSES}
-      text-[#4C2A00] hover:text-[#FFE8CC] hover:bg-[#663800]  cursor-pointer 
+      text-[var(--text-primary)] hover:text-[var(--bg-card)] hover:bg-[var(--button-hover)]  cursor-pointer 
 `;
 
 
 export const PRIMARY_BUTTON_CLASSES_HEADER = `
   ${BASE_BUTTON_CLASSES_HEADER}
-   text-[#FFE8CC] bg-[#4C2A00] hover:text-[#FFE8CC] hover:bg-[#663800] shadow-md cursor-pointer
+   text-[var(--bg-card)] bg-[var(--text-primary)] hover:text-[var(--bg-card)] hover:bg-[var(--color-icons)] shadow-md cursor-pointer
   
 `;
 
 export const SECONDARY_BUTTON_CLASSES_HEADER = `
   ${BASE_BUTTON_CLASSES_HEADER}
-      text-[#4C2A00] hover:text-[#FFE8CC] hover:bg-[#663800]  cursor-pointer
+      text-[var(--text-primary)] hover:text-[var(--bg-card)] hover:bg-[var(--color-icons)]  cursor-pointer
 `;
 

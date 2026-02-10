@@ -7,6 +7,7 @@
  
     --bg-site: #FFF3E5;
     --bg-card: #FFE8CC;
+    --text-h1: #1F160D;
     --text-primary: #4C2A00;
     --button-pressed: #4C2A00;
     --button-hover: #FFAE4C;
@@ -19,6 +20,7 @@
   .dark {
     --bg-site: #1F160D; 
     --bg-card: #4C2A00; 
+    --text-h1: #FFF3E5;    
     --text-primary: #FFE8CC;
     --button-pressed: #FFE8CC;   
     --button-hover: #663800;   

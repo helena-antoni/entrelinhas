@@ -21,7 +21,6 @@ const Main: React.FC = () => {
 
     // function copy
     const handleCopyClick = async () => {
-        // citação + autor
         const textToCopy = `${currentQuote.text} — ${currentQuote.author}`;
 
         try {
@@ -70,7 +69,7 @@ const Main: React.FC = () => {
 
     return (
     <>  
-    <main className="w-full bg-[#FFF3E5]">
+    <main className="w-full bg-[var(--bg-site)]">
         <div className="flex flex-col mx-auto w-full max-w-[1440px]
             px-6 pt-10 md:pt-16 md:px-12 lg:px-[92px] lg:pt-20 ">
          
@@ -79,7 +78,7 @@ const Main: React.FC = () => {
             <section className="container w-full items-left ">
                 
                 <p className="md:text-3xl max-full pt-8 pb-8 
-                    text-left font-indie font-normal text-[#4C2A00] 
+                    text-left font-indie font-normal text-[var(--text-primary)] 
                         
                     //Mobile
                     text-[22px] leading-[140%] tracking-[-0.22px]  

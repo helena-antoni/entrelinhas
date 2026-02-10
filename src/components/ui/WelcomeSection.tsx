@@ -4,7 +4,7 @@ const WelcomeSection: React.FC = () => {
   return (
     <section className="w-full text-left font-indie font-normal p-0    ">
       
-      <h1 className=" text-[#1F160D] 
+      <h1 className=" text-[var(--text-h1)] 
         // Mobile 
         text-[44px] leading-[110%] tracking-[-0.44px]
                 
@@ -16,7 +16,7 @@ const WelcomeSection: React.FC = () => {
 
         Bem-vindo(a) ao Entrelinhas!
       </h1>
-      <p className=" text-[#4C2A00] 
+      <p className=" text-[var(--text-primary)] 
           // Mobile
           text-[28px] leading-[140%] tracking-[-0.44px]  
                 

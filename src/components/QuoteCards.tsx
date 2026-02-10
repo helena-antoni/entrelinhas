@@ -10,7 +10,7 @@ interface QuoteCardsProps {
 }
  
 const LoadingSpinner = () => (
-    <div className="flex flex-col items-center justify-center w-full min-h-[16px] pb-[16px] text-[#4C2A00]">
+    <div className="flex flex-col items-center justify-center w-full min-h-[16px] pb-[16px] text-[var(--text-primary)]">
         <span className="material-symbols-rounded text-1xl  animate-spin">autorenew</span>
         <p className=" text-sm font-bold">Gerando inspiração...</p>
     </div>
@@ -21,7 +21,7 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onCopyClick, isLoading }
     const cardClasses = ` 
         flex flex-col justify-between
         rounded-2xl 
-        bg-[#FFE8CC]                 
+        bg-[var(--bg-card)]                 
         shadow-md           
         py-4 px-6
         w-full
@@ -50,7 +50,7 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onCopyClick, isLoading }
                     </div>
                     
                     <div className="flex items-start w-full">
-                        <p className="font-normal text-[#4C2A00] text-[22px] leading-[150%]">
+                        <p className="font-normal text-[var(--text-primary)] text-[22px] leading-[150%]">
                             {quote.text}" 
                             <span className="text-[18px] font-inter italic">
                                 - {quote.author}
@@ -63,7 +63,7 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onCopyClick, isLoading }
             <div className={`
                 w-full  
                 flex justify-end items-center 
-                border-t border-[#4C2A00] pt-2
+                border-t border-[var(--text-primary)] pt-2
                 gap-4
             ${isLoading ? 'opacity-50 pointer-events-none' : ''} 
             `}>

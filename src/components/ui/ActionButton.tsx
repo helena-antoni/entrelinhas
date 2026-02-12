@@ -22,7 +22,7 @@ const baseClasses = isPrimary
     : `
         flex items-center gap-1 
         text-sm font-semibold 
-        text-[#4C2A00] hover:text-[#663800] hover:cursor-pointer
+        text-[var(--text-primary)] hover:text-[var(--button-hover)] hover:cursor-pointer
         transition duration-300
         p-2 rounded-lg 
     `;

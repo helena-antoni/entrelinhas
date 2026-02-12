@@ -1,10 +1,19 @@
-import React, { useState } from 'react';  
 import Image from 'next/image';
 import { PRIMARY_BUTTON_CLASSES_HEADER, SECONDARY_BUTTON_CLASSES_HEADER} from '../../utils/styeButtons';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 const Header: React.FC = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
   return (
   <header className="bg-[var(--bg-card)] py-[24px] relative z-10 shadow-[0_12px_16px_-4px_rgba(0,0,0,0.08),0_4px_6px_-2px_rgba(0,0,0,0.03)]">
 

@@ -21,16 +21,16 @@ const CategorySelector: React.FC<CategorySelectorProps> = ({ onSelect }) => {
     return (
         <div className="
         /* Mobile */  
-        grid grid-cols-2 gap-y-6 gap-x-2 
+        grid grid-cols-2 gap-y-6 gap-x-2  
         
-        pb-8 w-full 
+        pb-8
 
         /* Tablet */
-        md:flex md:justify-between md:flex-row md:flex-wrap 
-        md:gap-x-12 md:gap-y-0 
+        md:flex md:justify-between flex-row  flex-wrap 
+         
     
         /* Desktop */
-        lg:justify-start lg:gap-x-9 
+        lg:justify-start lg:gap-x-9  
         ">
             {categories.map((category: Category) => {
                 const isActive = category.slug === activeSlug;
@@ -38,7 +38,7 @@ const CategorySelector: React.FC<CategorySelectorProps> = ({ onSelect }) => {
                 return (
                     <CategoryButton
                         key={category.slug}
-                        name={category.name}
+                        name={category.name} 
                         icon={category.icon}
                         isActive={isActive}
                         onClick={() => handleSelect(category.slug)}

@@ -20,11 +20,10 @@ const ActionButton: React.FC<ActionButtonProps> = ({
 const baseClasses = isPrimary 
     ? SECONDARY_BUTTON_CLASSES 
     : `
-        flex items-center gap-1 
-        text-sm font-semibold 
-        text-[var(--text-primary)] hover:text-[var(--button-hover)] hover:cursor-pointer
+        flex items-center gap-1 p-2 rounded-lg 
+        text-sm font-semibold  text-[var(--text-primary)]   
+        hover:bg-[var(--button-hover)] hover:cursor-pointer 
         transition duration-300
-        p-2 rounded-lg 
     `;
 
 return (

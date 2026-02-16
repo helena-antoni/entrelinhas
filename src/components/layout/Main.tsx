@@ -10,7 +10,7 @@ import { Quote } from '../types';
 
 const initialQuote: Quote = {
     text: "Uma merda bem feita ainda continua sendo uma merda.", 
-    author: "Soares, Horácio",
+    author: "Horacio Soares",
     categorySlug: 'random,'
 };
 
@@ -71,7 +71,7 @@ const Main: React.FC = () => {
     <>  
     <main className="w-full bg-[var(--bg-site)]">
         <div className="flex flex-col mx-auto w-full max-w-[1440px]
-            px-6 pt-10 md:pt-16 md:px-12 lg:px-[92px] lg:pt-20 ">
+            px-6 pt-10 md:pt-16 md:px-12 lg:px-[92px] lg:pt-20 select-none">
          
             <WelcomeSection />
             

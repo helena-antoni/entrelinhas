@@ -1,5 +1,5 @@
 const BASE_BUTTON_CLASSES = 
-` flex items-center border-none justify-center gap-2 lg:py-1.5 lg:px-3 md:py-1.5 md:px-3 py-1 px-2.5
+` flex items-center border-none justify-center gap-2 lg:py-1.5 lg:px-3 md:py-1.5 md:px-3 py-1 px-2.5 
   font-medium w-auto text-[16px]
   rounded-xl  text-sm transition duration-300 
   `;

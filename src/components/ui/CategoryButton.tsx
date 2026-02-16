@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { PRIMARY_BUTTON_CLASSES, SECONDARY_BUTTON_CLASSES } from '../../utils/styeButtons'; 
 
 interface CategoryButtonProps {
@@ -10,21 +10,30 @@ interface CategoryButtonProps {
 }
 
 const CategoryButton: React.FC<CategoryButtonProps> = ({ name, icon, isActive, onClick }) => {
-    
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile(); 
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     const buttonStyle = isActive ? PRIMARY_BUTTON_CLASSES : SECONDARY_BUTTON_CLASSES;
 
     return (
-       <button
+        <button
             onClick={onClick}
             type="button"
-            className={buttonStyle}
+            className={`${buttonStyle} flex items-center justify-center`}
         >
-            <span className="material-symbols-rounded text-[20px]">
-                {icon}
-            </span>
+            {!isMobile && (
+                <span className="material-symbols-rounded text-[20px]">
+                    {icon}
+                </span>
+            )}
             
-            {/* Nome da categoria */}
-            {name}
+            <span>{name}</span>
         </button>
     );
 };

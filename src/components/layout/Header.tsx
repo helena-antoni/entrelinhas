@@ -15,24 +15,24 @@ const Header: React.FC = () => {
     return null;
   }
   return (
-  <header className="bg-[var(--bg-card)] py-[24px] relative z-10 shadow-[0_12px_16px_-4px_rgba(0,0,0,0.08),0_4px_6px_-2px_rgba(0,0,0,0.03)]">
+  <header className="bg-[var(--bg-card)] py-6 relative z-10 shadow-[0_12px_16px_-4px_rgba(0,0,0,0.08),0_4px_6px_-2px_rgba(0,0,0,0.03)]">
 
-    <div className="flex justify-between items-center mx-auto max-w-[1440px]
-      px-6 md:px-12 lg:px-[92px]"> 
+    <div className="flex justify-between items-center mx-auto max-w-[1440px]   
+      px-6 md:px-12 lg:px-[92px] select-none"> 
           
-      <a href="/">
+      <a href="#">
         <Image  
-         src={theme === 'light' ? 'logo-light-mode.svg' : 'logo-dark-mode.svg'}          alt="Logo Entrelinhas" 
+         src={theme === 'light' ? 'logo-light-mode.svg' : 'logo-dark-mode.svg'} alt="Logo Entrelinhas" 
           width={103}
           height={36}
           className="h-8 md:h-9 w-auto " 
         />
       </a> 
           
-      <div className="flex items-center gap-1 p-0">
+      <div className="flex items-center gap-1 h-[36px] ">
         <button 
           onClick={() => setTheme('light')}
-          className={`${theme === 'light' ? PRIMARY_BUTTON_CLASSES_HEADER : SECONDARY_BUTTON_CLASSES_HEADER} w-11 h-11 flex items-center justify-center`}
+          className={`${theme === 'light' ? PRIMARY_BUTTON_CLASSES_HEADER : SECONDARY_BUTTON_CLASSES_HEADER} w-9 h-9 flex items-center justify-center`}
           title="Modo Claro"
         >
           <span className="material-symbols-rounded ">wb_sunny</span>

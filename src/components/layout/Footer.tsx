@@ -21,33 +21,33 @@ const Footer: React.FC = () => {
     if (!mounted) return null;
     
    return (
-    <footer className="w-full bg-[var(--bg-card)] mt-[133px] md:mt-52 lg:mt-40
+    <footer className="w-full  bg-[var(--bg-card)] mt-[133px] md:mt-52 lg:mt-26
         relative z-20 overflow-hidden
         shadow-[0_-12px_16px_-4px_rgba(0,0,0,0.08),0_4px_6px_-2px_rgba(0,0,0,0.03)]
-        pt-8 pb-4 md:pt-12 md:pb-6 
-            px-6 md:px-[48px] lg:px-[96px]">
+        pt-7  px-6 md:px-[48px] lg:px-[96px] select-none">
 
-        <div className="  mx-auto lg:m-auto  max-w-[1248px]
-            flex flex-col md:flex-row items-start md:items-start gap-8  lg:gap-0">
+        <div className=" max-w-[1248px]  lg:m-auto 
+            flex flex-col md:flex-row items-start md:items-start lg:gap-12 md:gap-8">
                 
-            <div className=" flex justify-start lg:px-12 lg:py-6 ">
-                <a href="/"  >
+            <div className="flex justify-start lg:px-6 lg:py-8 md:px-6 md:py-14 py-5 p-1.5 flex-shrink-0">
+                <a href="#"  >
                     <Image  
                         src={theme === 'dark' ? '/logo-dark-mode.svg' : '/logo-light-mode.svg'}                       
                         alt="Logo Entrelinhas" 
-                        width={102} 
-                        height={24} 
+                        width={153} 
+                        height={34}  
                     />
                 </a>
             </div>
 
             {/* info e crédito */}
-            <div className="w-full md:w-auto lg:m-auto md:m-auto md:border-l lg:border-l  border-[text-primary] 
-                flex flex-col items-start  text-start   md:text-start
-                md:pl-10 text-[text-primary]">
+            <div className="   lg:pl-12 md:pl-8  
+            md:border-l lg:border-l  border-[text-primary] 
+                flex flex-col items-start text-start md:text-start text-[text-primary]
+                 "> 
                     
-                <p className=" font-indie font-normal text-[22px] pb-6
-                    md:text-2xl  leading-[-22%]  tracking-[140%]   ">
+                <p className=" font-indie font-normal text-[22px]  
+                    md:text-2xl  leading-[-22%]  tracking-[140%]  py-6 ">
                     "Entrelinhas – porque o que importa está no meio das linhas."
                 </p>
 
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
                 </p>
 
                 <p className={` flex flex-wrap items-center justify-start lg:justify-end   text-sm 
-                    font-medium text-[16px]  leading-[200%]  gap-1
+                    font-medium text-[16px]  leading-[200%] gap-2
                     `}> 
                         Feito com 
                         <Image 

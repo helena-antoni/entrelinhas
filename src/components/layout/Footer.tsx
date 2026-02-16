@@ -24,16 +24,17 @@ const Footer: React.FC = () => {
     <footer className="w-full  bg-[var(--bg-card)] mt-[133px] md:mt-52 lg:mt-26
         relative z-20 overflow-hidden
         shadow-[0_-12px_16px_-4px_rgba(0,0,0,0.08),0_4px_6px_-2px_rgba(0,0,0,0.03)]
-        pt-7  px-6 md:px-[48px] lg:px-[96px] select-none">
+        pt-7  px-6 md:px-[48px] lg:px-[96px] select-none"
+        role="contentinfo">
 
         <div className=" max-w-[1248px]  lg:m-auto 
             flex flex-col md:flex-row items-start md:items-start lg:gap-12 md:gap-8">
                 
             <div className="flex justify-start lg:px-6 lg:py-8 md:px-6 md:py-14 py-5 p-1.5 flex-shrink-0">
-                <a href="#"  >
+                <a href="#">
                     <Image  
                         src={theme === 'dark' ? '/logo-dark-mode.svg' : '/logo-light-mode.svg'}                       
-                        alt="Logo Entrelinhas" 
+                        alt="Logotipo Entrelinhas" 
                         width={153} 
                         height={34}  
                     />
@@ -61,25 +62,36 @@ const Footer: React.FC = () => {
                         Feito com 
                         <Image 
                             src={"/heart-footer.svg"}
-                            alt="Ícone do coração" 
+                            alt="Ícone de coração laranja" 
                             width={20} 
                             height={18.35}  
                             className='w-[20px] h-[18.35]'
+                            aria-label='amor' 
                         />
                         por 
                         <a 
-                        target="_blank"
-                        href='https://github.com/estercopinheiro'
-                        className={" "}> <span className=' p-1.5 rounded-[12px] hover:bg-[var(--button-hover)] transition duration-300'>Ester Pinheiro</span> </a> 
-                        &
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href='https://github.com/estercopinheiro'
+                            aria-label="Ester Pinherio - Clique para ver Portfólio"
+                            className={" "}> <span className=' p-1.5 rounded-[12px] hover:bg-[var(--button-hover)] transition duration-300'>
+                                Ester Pinheiro
+                            </span>
+                        </a> 
+                            <span aria-label='e'>&</span>
                         <a 
-                    target="_blank"
-                    href='https://github.com/helena-antoni'
-                    className={" "}> <span className=' p-1.5 rounded-[12px] hover:bg-[var(--button-hover)] transition duration-300'>Helena Antoni</span> </a>
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href='https://github.com/helena-antoni'
+                            aria-label="Helena Antoni - Clique para ver Portfólio"
+                            className={" "}> 
+                            <span className=' p-1.5 rounded-[12px] hover:bg-[var(--button-hover)] transition duration-300'>
+                                Helena Antoni
+                            </span> 
+                        </a>
                 </p>
             </div>
 
-            
             
             
         </div>

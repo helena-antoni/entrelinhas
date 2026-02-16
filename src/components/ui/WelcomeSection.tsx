@@ -2,7 +2,7 @@ import React from 'react';
 
 const WelcomeSection: React.FC = () => {
   return (
-    <section className="w-full text-left font-indie font-normal p-0    ">
+    <section className="w-full text-left font-indie font-normal p-0" >
       
       <h1 className=" text-[var(--text-h1)] 
         // Mobile 

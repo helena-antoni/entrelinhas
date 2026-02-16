@@ -75,7 +75,7 @@ const Main: React.FC = () => {
          
             <WelcomeSection />
             
-            <section className="container w-full items-left ">
+            <section className="container w-full items-left " aria-labelledby="main-instruction">
                 
                 <p className="md:text-3xl max-full pt-8 pb-8 
                     text-left font-indie font-normal text-[var(--text-primary)] 
@@ -93,14 +93,14 @@ const Main: React.FC = () => {
                 </p>
                 
                 {/* Seletor de Categorias */}
-                    <div className="w-full ">
-                        <CategorySelector 
-                            onSelect={handleCategorySelect} 
-                        />
-                    </div>
+                <div className="w-full " aria-hidden="true">
+                    <CategorySelector 
+                       onSelect={handleCategorySelect} 
+                    />
+                </div>
 
-                    {/* Card da Frase */}
-                    <div className="w-full ">
+                {/* Card da Frase */}
+                <div className="w-full" aria-live="polite" aria-atomic="true">
                     <QuoteCards 
                         quote={currentQuote}  
                         onCopyClick={handleCopyClick}  

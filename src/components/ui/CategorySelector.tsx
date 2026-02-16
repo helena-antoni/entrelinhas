@@ -19,33 +19,33 @@ const CategorySelector: React.FC<CategorySelectorProps> = ({ onSelect }) => {
     };
 
     return (
-        <div className="
-        /* Mobile */  
-        grid grid-cols-2 gap-y-6 gap-x-2  
+        <nav className="
+            /* Mobile */  
+            grid grid-cols-2 gap-y-6 gap-x-2  
+            
+            pb-8
+
+            /* Tablet */
+            md:flex md:justify-between flex-row  flex-wrap 
+            
         
-        pb-8
+            /* Desktop */
+            lg:justify-start lg:gap-x-9 " 
+            >
+                {categories.map((category: Category) => {
+                    const isActive = category.slug === activeSlug;
 
-        /* Tablet */
-        md:flex md:justify-between flex-row  flex-wrap 
-         
-    
-        /* Desktop */
-        lg:justify-start lg:gap-x-9  
-        ">
-            {categories.map((category: Category) => {
-                const isActive = category.slug === activeSlug;
-
-                return (
-                    <CategoryButton
-                        key={category.slug}
-                        name={category.name} 
-                        icon={category.icon}
-                        isActive={isActive}
-                        onClick={() => handleSelect(category.slug)}
-                    />
-                );
-            })}
-        </div>
+                    return (
+                        <CategoryButton 
+                            key={category.slug}
+                            name={category.name} 
+                            icon={category.icon}
+                            isActive={isActive}
+                            onClick={() => handleSelect(category.slug)}
+                        />
+                    );
+                })}
+            </nav>
     );
 };
 

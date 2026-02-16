@@ -25,10 +25,12 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({ name, icon, isActive, o
         <button
             onClick={onClick}
             type="button"
-            className={`${buttonStyle} flex items-center justify-center`}
+            className={`${buttonStyle} flex items-center justify-center`
+            
+        }
         >
             {!isMobile && (
-                <span className="material-symbols-rounded text-[20px]">
+                <span className="material-symbols-rounded text-[20px]" aria-hidden="true">
                     {icon}
                 </span>
             )}

@@ -27,7 +27,7 @@ const baseClasses = isPrimary
     `;
 
 return (
-    <button 
+    <button
         onClick={onClick}
         type="button"
         className={` 
@@ -35,9 +35,12 @@ return (
             flex-shrink-0 
             ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
         `}
-        disabled={disabled}
+        disabled={disabled} 
+        aria-label="Copiar citação para a área de transferência" 
     >            
-    <span className="material-symbols-rounded text-base">{icon}</span>
+    <span className="material-symbols-rounded text-base" aria-hidden="true">
+        {icon}
+    </span>
         {name}
     </button>
     );

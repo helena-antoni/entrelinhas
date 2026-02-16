@@ -22,33 +22,43 @@ const Header: React.FC = () => {
           
       <a href="#">
         <Image  
-         src={theme === 'light' ? 'logo-light-mode.svg' : 'logo-dark-mode.svg'} alt="Logo Entrelinhas" 
+          src={theme === 'light' ? 'logo-light-mode.svg' : 'logo-dark-mode.svg'}   
+          alt="Logotipo Entrelinhas escrito em caligrafia cursiva na cor marrom"
           width={103}
           height={36}
-          className="h-8 md:h-9 w-auto " 
+          className="h-8 md:h-9 w-auto "  
+          priority
         />
       </a> 
-          
-      <div className="flex items-center gap-1 h-[36px] ">
+
+
+      <nav aria-label="Botões de configuração de aparência " 
+        className="flex items-center gap-1 h-[36px]"
+        >   
         <button 
           onClick={() => setTheme('light')}
           className={`${theme === 'light' ? PRIMARY_BUTTON_CLASSES_HEADER : SECONDARY_BUTTON_CLASSES_HEADER} w-9 h-9 flex items-center justify-center`}
-          title="Modo Claro"
-        >
-          <span className="material-symbols-rounded ">wb_sunny</span>
+          aria-hideen="true"
+          aria-label={theme === 'light' ? "Modo claro ativado": "Modo claro"}
+          >
+          
+
+        <span className="material-symbols-rounded" aria-hidden="true">wb_sunny</span>
         </button>
           
-        <div className="w-[2px] h-9 bg-[var(--button-pressed)]" aria-hidden="true"></div>
+        <div className="w-[2px] h-9 bg-[var(--button-pressed)]"></div>
 
         <button 
-          onClick={() => setTheme('dark')}
-          className={`${theme === 'dark' ? PRIMARY_BUTTON_CLASSES_HEADER : SECONDARY_BUTTON_CLASSES_HEADER} w-11 h-11 flex items-center justify-center`}
-          title="Modo Escuro"
-         >
-          <span className="material-symbols-rounded ">moon_stars</span>
-        </button>
+            onClick={() => setTheme('dark')}
+            className={`${theme === 'dark' ? PRIMARY_BUTTON_CLASSES_HEADER : SECONDARY_BUTTON_CLASSES_HEADER} w-11 h-11 flex items-center justify-center`}
+            aria-hideen="true"
+            aria-label={theme === 'dark' ? "Modo escuro ativado": "Modo escuro"}
+           >
 
-      </div>
+            <span className="material-symbols-rounded" aria-hidden="true">moon_stars</span>
+        </button>
+      
+       </nav>
     </div>
   </header>
   );

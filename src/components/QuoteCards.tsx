@@ -31,7 +31,7 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onCopyClick, isLoading }
                 <LoadingSpinner />
             ) : (
             
-                <div className="flex flex-row items-start gap-2 w-full p-3">  
+                <figure className="flex flex-row items-start gap-2 w-full p-3">  
                     <div className="pt-1 flex-shrink-0">
                         <Image  
                             src={aspas} 
@@ -39,18 +39,24 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onCopyClick, isLoading }
                             width={16}  
                             height={18}
                             className="w-[16px] md:w-[18px] h-auto" 
+                            aria-hidden="true"
                         />
                     </div>
                     
                     <div className="flex items-start w-full">
-                        <p className="font-normal text-[var(--text-primary)] text-[22px] leading-[150%] select-text">
-                            {quote.text}" 
-                            <span className="text-[18px] font-inter italic">
-                                - {quote.author}
-                            </span>
-                        </p>
+                        <blockquote className="font-normal text-[var(--text-primary)] text-[22px] leading-[150%] select-text"> 
+                            <p aria-label={`Citação: ${quote.text}`}>
+                                {quote.text}
+                                <span aria-hidden="true">" </span>
+                                <cite  className="text-[18px] font-inter italic mt-2 items-center">
+                                    <span className="sr-only">Autor: </span>
+                                    <span>— {quote.author}
+                                        </span>
+                                </cite>
+                            </p>
+                        </blockquote>
                     </div>
-                </div>
+                </figure>
             )}
             {/* copiar */}
             <div className={`
@@ -62,7 +68,7 @@ const QuoteCards: React.FC<QuoteCardsProps> = ({ quote, onCopyClick, isLoading }
                     
                     <ActionButton 
                         name="Copiar"
-                        icon="content_copy"
+                        icon="content_copy" 
                         onClick={onCopyClick}
                         isPrimary={false}  
                         disabled={isLoading}

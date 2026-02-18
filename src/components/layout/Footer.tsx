@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
                  "> 
                     
                 <p className=" font-indie font-normal text-[22px]  
-                    md:text-2xl  leading-[-22%]  tracking-[140%]  py-6 ">
+                    md:text-2xl leading-[-22%] lg:pb-0  md:pb-4 pb-6">
                     "Entrelinhas – porque o que importa está no meio das linhas."
                 </p>
 

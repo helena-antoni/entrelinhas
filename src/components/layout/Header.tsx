@@ -38,7 +38,7 @@ const Header: React.FC = () => {
         <button 
           onClick={() => setTheme('light')}
           className={`${theme === 'light' ? PRIMARY_BUTTON_CLASSES_HEADER : SECONDARY_BUTTON_CLASSES_HEADER} w-9 h-9 flex items-center justify-center`}
-          aria-hideen="true"
+          aria-hidden="true"
           aria-label={theme === 'light' ? "Modo claro ativado": "Modo claro"}
           >
           
@@ -51,7 +51,7 @@ const Header: React.FC = () => {
         <button 
             onClick={() => setTheme('dark')}
             className={`${theme === 'dark' ? PRIMARY_BUTTON_CLASSES_HEADER : SECONDARY_BUTTON_CLASSES_HEADER} w-11 h-11 flex items-center justify-center`}
-            aria-hideen="true"
+            aria-hidden="true"
             aria-label={theme === 'dark' ? "Modo escuro ativado": "Modo escuro"}
            >
 
